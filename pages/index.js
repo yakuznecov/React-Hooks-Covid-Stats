@@ -1,11 +1,20 @@
-import { useGetCountries } from '../lib/hooks';
+import { createGlobalStyle } from 'styled-components';
+import Countries from '../components/Countries';
+
+const GlobalStyle = createGlobalStyle`
+	html {
+		font-family: 'Roboto', sans-serif
+	}
+	h2 {
+		margin: 0 0 10px;
+	}
+`;
 
 export default function Index() {
-	const data = useGetCountries();
-	console.log(data);
 	return (
 		<div>
-			<p>Countries</p>
+			<GlobalStyle />
+			<Countries />
 		</div>
 	);
 }
